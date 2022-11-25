@@ -1,4 +1,5 @@
 //nel terminale di VS mi da un errore che non ho capito come gestire ma centra con la tipizzazzione del documento per quanto riguarda HTML//
+//per vedere i risultati senza errori controllare la console del live server//
 
 
 //////////////////////////////////////////////////////////////////////////////////
