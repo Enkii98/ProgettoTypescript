@@ -146,8 +146,17 @@ function reset (){
   console.log(`Le chiamate sono state azzerate, controlla i dati`);
 }
 
+  let stop1: any = document.querySelector("#stop");
+  stop1.disabled = true;
+
 
 function crono(): any {
+  let start1:any= document.getElementById("start");
+
+  start1.disabled=true;
+  stop1.disabled = false;
+
+  
   console.log(`\n------------User3--------------\n`);
 
   let h = 0;
@@ -168,8 +177,9 @@ function crono(): any {
 
   console.log(`Numero chiamate:${++persona3.ncall}`);
 
-  let stop = document.getElementById("stop");
-  stop?.addEventListener("click", () => {
+  stop1?.addEventListener("click", () => {
+    start1.disabled = false;
+    stop1.disabled = true;
     clearInterval(tempo);
     persona3.call(min, sec);
     cronometro.innerHTML = ` `;

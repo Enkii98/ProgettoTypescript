@@ -1,4 +1,5 @@
 //nel terminale di VS mi da un errore che non ho capito come gestire ma centra con la tipizzazzione del documento per quanto riguarda HTML//
+//per vedere i risultati senza errori controllare la console del live server//
 var __extends = (this && this.__extends) || (function () {
     var extendStatics = function (d, b) {
         extendStatics = Object.setPrototypeOf ||
@@ -118,7 +119,12 @@ function reset() {
     persona3.reset();
     console.log("Le chiamate sono state azzerate, controlla i dati");
 }
+var stop1 = document.querySelector("#stop");
+stop1.disabled = true;
 function crono() {
+    var start1 = document.getElementById("start");
+    start1.disabled = true;
+    stop1.disabled = false;
     console.log("\n------------User3--------------\n");
     var h = 0;
     var min = 0;
@@ -135,8 +141,9 @@ function crono() {
         }
     }, 1000);
     console.log("Numero chiamate:".concat(++persona3.ncall));
-    var stop = document.getElementById("stop");
-    stop === null || stop === void 0 ? void 0 : stop.addEventListener("click", function () {
+    stop1 === null || stop1 === void 0 ? void 0 : stop1.addEventListener("click", function () {
+        start1.disabled = false;
+        stop1.disabled = true;
         clearInterval(tempo);
         persona3.call(min, sec);
         cronometro.innerHTML = " ";
